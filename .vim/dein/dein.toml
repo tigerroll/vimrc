@@ -1,0 +1,296 @@
+# Basic tools 
+# dain.vim
+[[plugins]] 
+repo = 'Shougo/dein.vim'
+
+# toml syntax
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+# Switch ft according to the context of the cursor position.
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+# A library that determines ft in the context of the cursor position.
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# Asynchronous execution library:need for vimshell, Gmail, unite, etc...
+[[plugins]]
+repo = 'Shougo/vimproc'
+build = 'make'
+
+# Support repeat for surround, speedating, easymotion, etc...
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+# Sub mode
+[[plugins]]
+repo = 'kana/vim-submode'
+
+# webapi
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+# Molokai
+[[plugins]]
+repo = 'tomasr/molokai'
+
+# Solarized
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+# Unite
+# Source for unite: mru
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+depdens = ['unite.vim']
+
+# Source for unite: mark
+[[plugins]]
+repo = 'tacroe/unite-mark'
+depdens = ['unite.vim']
+
+# Source for unite: help
+[[plugins]]
+repo = 'tsukkee/unite-help'
+depdens = ['unite.vim']
+
+# Source for unite: history/command, history/search
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+depdens = ['unite.vim']
+
+# Source for unite: history/yank
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+depdens = ['unite.vim']
+
+# Source for unite: tag
+[[plugins]]
+repo = 'tsukkee/unite-tag'
+depdens = ['unite.vim']
+
+# Source for unite: outline
+[[plugins]]
+repo = 'Shougo/unite-outline'
+depdens = ['unite.vim']
+
+# Completion
+[[plugins]]
+repo = 'ujihisa/neco-look'
+depends = ['neocomplete.vim']
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+depdens = ['neosnippet']
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+depdens = ['neosnippet']
+
+[[plugins]]
+repo = 'rcmdnk/vim-octopress-snippets'
+depdens = ['neosnippet']
+
+# Code syntax, tools for each language
+# Applescript
+[[plugins]]
+repo = 'vim-scripts/applescript.vim'
+
+# Automatic LaTeX Plugins
+[[plugins]]
+repo = 'coot/atp_vim'
+
+# CSS3 (Sass)
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax.git'
+
+# c++ 
+# syntax with c++11 support
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+
+# c++ completion
+[[plugins]]
+repo = 'osyo-manga/vim-marching'
+
+# c++ formatting
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+
+# Requirements
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+# Go-lang 
+# Extra plugins for Go
+[[plugins]]
+repo = 'vim-jp/vim-go-extra'
+
+# Java-lang
+[[plugins]]
+repo = 'koron/java-helper-vim'
+
+# Markdown plugins
+[[plugins]]
+repo = 'junegunn/vader.vim'
+
+#[[plugins]]
+#repo = 'godlygeek/tabular'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'joker1007/vim-markdown-quote-syntax'
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+
+# Python
+# indent
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+
+# Folding method for python, but makes completion too slow...?
+[[plugins]]
+repo = 'vim-scripts/python_fold'
+
+# Powershell
+# Powershell syntax.
+[[plugins]]
+repo = 'PProvost/vim-ps1'
+
+# Vim Script
+# Vim Script Syntax
+[[plugins]]
+repo = 'dbakker/vim-lint'
+
+# Vim Syntax checking
+[[plugins]]
+repo = 'scrooloose/syntastic'
+depends = ['vimproc']
+
+# View Version Control System 
+# Git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# View 
+# Status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# Visual indent guides: make moving slow?
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+# Konfekt/FastFold
+[[plugins]]
+repo = 'Konfekt/FastFold'
+
+# Character base diff
+[[plugins]]
+repo = 'rickhowe/diffchar.vim'
+
+# diff enhanced
+[[plugins]]
+repo = 'chrisbra/vim-diff-enhanced'
+
+# Selection
+# wildfire
+[[plugins]]
+repo = 'gcmt/wildfire.vim'
+
+# Highlight on the fly
+[[plugins]]
+repo = 't9md/vim-quickhl'
+
+# Search
+# Count searching objects
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+
+# Improved incremental searching 
+# (default incsearch shows only the next one.)
+[[plugins]]
+repo = 'haya14busa/incsearch.vim'
+
+# Edit
+# textobj
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+# line: al, il
+[[plugins]]
+repo = 'kana/vim-textobj-line'
+depends = ['vim-textobj-user']
+
+# line: ai, ii
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
+depends = ['vim-textobj-user']
+
+# function: af, if
+[[plugins]]
+repo = 'kana/vim-textobj-function'
+depends = ['vim-textobj-user']
+
+# comment: ac, ic
+[[plugins]]
+repo = 'thinca/vim-textobj-comment'
+depends = ['vim-textobj-user']
+
+# Operator 
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+depdens = ['vim-operator-user']
+
+# yank
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+
+# vim-multiple-cursors, like Sublime Text's multiple selection
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+
+# Easy to change surround
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# Move
+# Database access
+[[plugins]]
+repo = 'vim-scripts/dbext.vim'
+
+# vimdoc japanese.
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+# Run commands quickly.
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# Highlight quickfix errors.
+[[plugins]]
+repo = 'jceb/vim-hier'
+
+# Quickfixstatus.
+[[plugins]]
+repo = 'dannyob/quickfixstatus'
+
+# Generic quickrun-hook plugin collection.
+[[plugins]]
+repo = 'osyo-manga/shabadou.vim'
+
+# Rooter changes the working directory to the project root 
+# when you open a file or directory.
+[[plugins]]
+repo = 'airblade/vim-rooter'
+

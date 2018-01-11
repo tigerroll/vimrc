@@ -1,0 +1,168 @@
+# Unite
+# Search and display information from arbitrary sources
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = ['vimproc']
+on_cmd = ['Unite']
+
+# Completion lua
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+
+# Snippet
+[[plugins]]
+repo = 'Shougo/neosnippet'
+on_map = ['<Plug>(neosnippet_expand_or_jump)','<Plug>(neosnippet_expand_target)']
+
+# Diff
+# linediff
+[[plugins]]
+repo = 'AndrewRadev/linediff.vim'
+on_cmd = ['Linediff']
+
+# IDE like 
+# The NERD Tree: File Explorer
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+on_cmd = ['NERDTreeToggle']
+
+# Source Explorer
+[[plugins]]
+repo = 'wesleyche/SrcExpl'
+on_cmd = ['SrcExplToggle']
+
+[[plugins]] # For Tags
+repo = 'majutsushi/tagbar'
+on_cmd = ['TagbarToggle']
+
+#[[plugins]] # Pyclewn
+#repo = 'newclear/vim-pyclewn'
+#on_cmd = 'Pyclewn'
+
+# View Version Control System 
+# Git
+[[plugins]]
+repo = 'gregsexton/gitv'
+depdens = ['tpope/vim-fugitive']
+on_cmd = ['Gitv']
+
+# Version control (especially for VCSVimDiff (<Leader>cv)
+[[plugins]]
+repo = 'vim-scripts/vcscommand.vim'
+on_cmd = ['VCSVimDiff']
+
+# Gist
+[[plugins]]
+repo = 'mattn/gist-vim'
+depdens = ['mattn/webapi-vim']
+on_cmd = ['Gist']
+
+# Search
+# Gundo
+[[plugins]]
+repo = 'sjl/gundo.vim'
+on_cmd = ['GundoToggle']
+
+# Align
+[[plugins]]
+repo = 'h1mesuke/vim-alignta'
+on_cmd = ['Alignta']
+
+# over
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+on_cmd = ['OverCommandLine']
+
+# Move
+# Easymotion
+repo  = 'easymotion/vim-easymotion'
+on_map = ['<Plug>(easymotion-sn)','<Plug>(easymotion-bd-W)','<Plug>(easymotion-bd-w)']
+
+# Check language, web source 
+# vim-ref
+[[plugins]]
+repo = 'thinca/vim-ref'
+on_cmd = ['Ref']
+
+# Grammer check with LanguageTool
+[[plugins]]
+repo = 'rhysd/vim-grammarous'
+on_cmd = ['GrammarousCheck']
+
+# Google Translate
+[[plugins]]
+repo = 'daisuzu/translategoogle.vim'
+on_cmd = ['TranslateGoogle', 'TranslateGoogleCmd']
+
+# Other tools # Make benchmark result of vimrc
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'
+on_cmd = ['BenchVimrc']
+
+# Open browser
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_map = ['<Plug>(openbrowser-smart-search)']
+
+# IM Control
+[[plugins]]
+repo = 'fuenor/im_control.vim'
+on_i = 1
+
+# The Silver Searcher
+[[plugins]]
+repo = 'rking/ag.vim'
+# Use ag (The Silver Searcher) for unite grep.
+hook_post_source = '''
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+'''
+
+# Fuzzy file, buffer, mru, tag, etc finder.
+[[plugins]]
+repo = 'kien/ctrlp.vim'
+hook_add = '''
+let g:ctrlp_user_command = 'ag %s -l'
+'''
+
+# Integrates GNU GLOBAL source code tag system with VIM.
+[[plugins]]
+repo = 'vim-scripts/gtags.vim'
+#----------------------------------------------------
+# GNU GLOBAL(gtags)
+#----------------------------------------------------
+# Ctrl-q 検索結果Windowを閉じる
+# Ctrl-g ソースコードの grep
+# Ctrl-l このファイルの関数一覧
+# Ctrl-j カーソル以下の定義元を探す
+# Ctrl-k カーソル以下の使用箇所を探す
+# Ctrl-n 次の検索結果へジャンプする
+# Ctrl-p 前の検索結果へジャンプする
+#----------------------------------------------------
+hook_add = '''
+  nmap <C-q> <C-w><C-w><C-w>q
+  nmap <C-g> :Gtags -g
+  nmap <C-l> :Gtags -f %<CR>
+  nmap <C-j> :Gtags <C-r><C-w><CR>
+  nmap <C-k> :Gtags -r <C-r><C-w><CR>
+  nmap <C-n> :cn<CR>
+  nmap <C-p> :cp<CR>
+'''
+
+# watchdogs - Async syntax check plugin.
+[[plugins]]
+repo = 'osyo-manga/vim-watchdogs'
+depends = ['vimproc', 'vim-quickrun', 'shabadou.vim', 'vim-hier', 'quickfixstatus']
+on_cmd = ['WatchdogsRun']
+
+# Next Omni Completion for java.
+# Updated version of the original javacomplete plugin for vim.
+repo  = 'vim-scripts/vim-javacomplete2'
+depends = ['vim-rooter']
+hook_add = '''
+  autocmd FileType java setlocal omnifunc=javacomplete#Complete
+'''
