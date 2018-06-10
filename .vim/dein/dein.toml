@@ -78,6 +78,10 @@ depdens = ['unite.vim']
 repo = 'Shougo/unite-outline'
 depdens = ['unite.vim']
 
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+depdens = ['unite.vim']
+
 # Completion
 [[plugins]]
 repo = 'ujihisa/neco-look'
@@ -148,7 +152,13 @@ repo = 'tpope/vim-surround'
 repo = 'joker1007/vim-markdown-quote-syntax'
 
 [[plugins]]
-repo = 'rcmdnk/vim-markdown'
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
 
 # Python
 # indent
@@ -294,3 +304,16 @@ repo = 'osyo-manga/shabadou.vim'
 [[plugins]]
 repo = 'airblade/vim-rooter'
 
+# RuboCop
+[[plugins]]
+repo = 'ngmy/vim-rubocop'
+
+[[plugins]]
+repo = 'scrooloose/syntastic.git'
+
+
+[[plugins]]
+repo = 'tyru/restart.vim'
+
+[[plugins]]
+repo = 'martinda/Jenkinsfile-vim-syntax'

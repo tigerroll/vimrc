@@ -57,6 +57,11 @@ function! IMCtrl(cmd)
   return ''
 endfunction
 
+" Swim 0.2.0
+if executable('swim')
+    autocmd InsertLeave * :call system('swim use com.apple.keyboardlayout.all')
+endif
+
 " <ESC>押下後のIM切替開始までの反応が遅い場合はttimeoutlenを
 " 短く設定してみてください。
 " IMCtrl()のsystem()コマンド実行時に&を付けて非同期で実行する
@@ -124,3 +129,20 @@ imap <silent> <C-D><C-D> <C-R>=strftime("%Y/%m/%d (%a) %H:%M")<CR>
 nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
 autocmd VimEnter * execute 'NERDTree'
+" vim mark down edit.
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a "/Applications/Google Chrome.app"'
+
+" RuboCop
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_ruby_checkers=['rubocop', 'mri']
+"
+"" 終了時に保存するセッションオプションを設定する
+"let g:restart_sessionoptions
+"    \ = 'blank,buffers,curdir,folds,help,localoptions,tabpages'
